@@ -1,9 +1,8 @@
 import React from 'react';
 
 const Character = (props) => {
-  console.log(props);
   return (
-    <article className='card'>
+    <article className='character-box'>
       <img src={props.image} className='card__img' alt={props.name} />
       <h3 className='card__title'>{props.name}</h3>
       <p className='card__description'>{props.species}</p>
