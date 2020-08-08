@@ -15,13 +15,12 @@ const Filter = (props) => {
       }}
       className='border--medium m-0 mb-1 mt-1 col2'
     >
-      <div>
+      <div className='search-input'>
         <label htmlFor='filterName' className='form__label '>
-          Filtrar por nombre
+          <b>Search character</b>
         </label>
         <input
           type='text'
-          className='form__input-text'
           id='filterName'
           value={props.filterName}
           onChange={handleFilterName}

@@ -1,43 +1,15 @@
+*,
+*:focus,
+*:hover {
+  outline: none;
+}
+
 body {
   background-color: #282c34;
+  color: white;
 }
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 ul {
@@ -57,12 +29,67 @@ ul {
 }
 .character-box {
   border: 4px solid aqua;
-  padding: 10px;
   border-radius: 6px;
-  width: 300px;
-  height: 430px;
+  width: 250px;
+  height: 350px;
   background-color: azure;
+  color: black;
 }
 .character-box:hover {
-  background-color: #74c04e;
+  box-shadow: 0 0 10px #92ca49;
+}
+.character-box img {
+  width: 250px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
+  margin: 20px auto;
+  height: 250px;
+}
+
+.card-details-text {
+  padding: 20px;
+  margin: inherit;
+  color: black;
+}
+
+.card-details:hover {
+  background-color: azure;
+}
+
+.back-box {
+  color: white;
+  width: 100px;
+  background-color: #31b0c8;
+  margin: auto;
+  border-radius: 6px;
+}
+
+.back-box:hover {
+  box-shadow: 0 0 10px #92ca49;
+}
+
+.search-input {
+  color: white;
+  background-color: #31b0c8;
+  margin: auto;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.search-input input {
+  margin-left: 10px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.search-input:hover {
+  box-shadow: 0 0 10px #92ca49;
 }
