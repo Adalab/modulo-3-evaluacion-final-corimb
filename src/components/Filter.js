@@ -13,15 +13,15 @@ const Filter = (props) => {
       onSubmit={(e) => {
         e.preventDefault();
       }}
-      className='border--medium m-0 mb-1 mt-1 col2'
     >
       <div className='search-input'>
-        <label htmlFor='filterName' className='form__label '>
+        <label htmlFor='filterName'>
           <b>Search character</b>
         </label>
         <input
           type='text'
           id='filterName'
+          placeholder='ej. Rick'
           value={props.filterName}
           onChange={handleFilterName}
         />

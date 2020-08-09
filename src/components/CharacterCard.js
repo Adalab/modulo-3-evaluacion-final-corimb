@@ -6,9 +6,9 @@ const CharacterCard = (props) => {
   return (
     <Link to={`/character/${props.id}`}>
       <article className='character-box'>
-        <img src={props.image} className='card__img' alt={props.name} />
-        <h3 className='card__title'>{props.name}</h3>
-        <p className='card__description'>{props.species}</p>
+        <img src={props.image} alt={props.name} />
+        <h3>{props.name}</h3>
+        <p>{props.species}</p>
       </article>
     </Link>
   );

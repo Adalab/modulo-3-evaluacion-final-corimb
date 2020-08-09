@@ -1,4 +1,5 @@
 import React from 'react';
+import gyph from '../images/giphy-rick-and-morty.gif';
 
 const CharacterDetail = (props) => {
   const statusIcon = () => {
@@ -48,6 +49,14 @@ const CharacterDetail = (props) => {
           </ul>
         </div>
       </section>
+      <div>
+        <img className='gyph' src={gyph} alt='giphy-rick-and-morty' />
+        <p>
+          <b>
+            <em>"Sometimes Science Is More Art Than Science, Morty."</em>
+          </b>
+        </p>
+      </div>
     </div>
   );
 };
