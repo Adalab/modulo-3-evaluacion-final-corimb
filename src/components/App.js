@@ -29,8 +29,9 @@ const App = () => {
   };
 
   const renderCharacterDetail = (props) => {
+    const RouteId = props.match.params.id;
     const character = characters.find(
-      (character) => character.id === parseInt(props.match.params.id)
+      (character) => character.id === parseInt(RouteId)
     );
     return (
       <>
