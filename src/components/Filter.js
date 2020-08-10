@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Filter = (props) => {
+  //pasar el valor del input al estado
   const handleFilterName = (ev) => {
     props.handleFilter({
       key: 'filterName',

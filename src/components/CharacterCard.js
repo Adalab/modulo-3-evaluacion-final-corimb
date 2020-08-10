@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CharacterCard = (props) => {
   return (
+    //link a la Details con props de CharacterList
     <Link to={`/character/${props.id}`}>
       <article className='character-box'>
         <img src={props.image} alt={props.name} />

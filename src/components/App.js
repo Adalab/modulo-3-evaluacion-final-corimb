@@ -12,11 +12,13 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
   useEffect(() => {
+    // guardar en el estado los datos de la api
     getDataFromApi(filterName).then((data) => {
       setCharacters(data);
     });
   }, [filterName]);
 
+  //filtrar los personajes que van a pintarse
   const renderFilteredCharacters = () => {
     let results = characters.filter((character) => {
       return character.name.toUpperCase().includes(filterName.toUpperCase());
@@ -24,10 +26,14 @@ const App = () => {
     return results;
   };
 
+  //función para guardar en el estado los datos del filtro
   const handleFilterName = (data) => {
     setFilterName(data.value);
   };
 
+  //función para hacer el match entre el id de la api y el id de la url
+  //ternario para pintar la segunda página según la url
+  //pasar las props a CharacterDetail
   const renderCharacterDetail = (props) => {
     const RouteId = props.match.params.id;
     const character = characters.find(

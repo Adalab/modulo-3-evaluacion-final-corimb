@@ -2,6 +2,7 @@ import React from 'react';
 import gyph from '../images/giphy-rick-and-morty.gif';
 
 const CharacterDetail = (props) => {
+  //función para los iconos del status
   const statusIcon = () => {
     if (props.status === 'unknown') {
       let icon;
@@ -16,6 +17,7 @@ const CharacterDetail = (props) => {
     }
   };
 
+  //función para los iconos de la especie
   const speciesIcon = () => {
     if (props.species === 'Human') {
       let icon;
@@ -25,11 +27,8 @@ const CharacterDetail = (props) => {
     if (props.species === 'Alien') return '👽';
   };
 
-  const handleDetailClick = (ev) => {
-    ev.preventDefault();
-  };
   return (
-    <div onClick={handleDetailClick}>
+    <div>
       <section className='card-details character-box'>
         <img className='card__img' src={props.image} alt={props.name} />
         <div className='card-details-text'>
