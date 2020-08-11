@@ -11,6 +11,7 @@ import CharacterDetail from './CharacterDetail';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
+  const [filterSpecies, setFilterSpecies] = useState('all');
   useEffect(() => {
     // guardar en el estado los datos de la api
     getDataFromApi(filterName).then((data) => {
@@ -23,13 +24,29 @@ const App = () => {
     let results = characters.filter((character) => {
       return character.name.toUpperCase().includes(filterName.toUpperCase());
     });
-    return results;
+    return results.filter((character) => {
+      if (filterSpecies === 'all') {
+        return true;
+      } else {
+        return character.species === filterSpecies;
+      }
+    });
   };
-
+  //función para guardar en el estado los valores del form
+  const handleFilters = (data) => {
+    if (data.key === 'filterName') {
+      setFilterName(data.value);
+    } else if (data.key === 'filterSpecies') {
+      setFilterSpecies(data.value);
+    }
+  };
   //función para guardar en el estado los datos del filtro
-  const handleFilterName = (data) => {
-    setFilterName(data.value);
-  };
+  // const handleFilterName = (data) => {
+  //   console.log(
+  //     'handlefiltername de app que guarda los datos en el estado de filtername'
+  //   );
+  //   setFilterName(data.value);
+  // };
 
   //función para hacer el match entre el id de la api y el id de la url
   //ternario para pintar la segunda página según la url
@@ -71,7 +88,11 @@ const App = () => {
       <img src={logo} alt='Rick and Morty logo' />
       <Switch>
         <Route exact path='/'>
-          <Filter filterName={filterName} handleFilter={handleFilterName} />
+          <Filter
+            filterName={filterName}
+            filterSpecies={filterSpecies}
+            handleFilter={handleFilters}
+          />
           <CharactersList
             characters={renderFilteredCharacters()}
             filter={filterName}
